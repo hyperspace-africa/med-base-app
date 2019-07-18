@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Possible Patients | Med Base</title>
+</head>
+<body>
+    <ul>
+        {% if data|length < 1 %}
+            <h3>No Result found</h3>
+        {% else %}
+            {% for i in data %}
+                <div>
+                <li>{{ i.get("first_name") }} {{ i.get("last_name") }}</li>
+                <li style="visibility: hidden;" class="data-item">{{ i.get("id") }}</li>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</body>
+</html>

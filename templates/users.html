@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users | Med Base</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #card-div {
+            color: crimson;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            width: 90vw;
+        }
+
+        #div-main, form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .main-input{
+            width: 90vw !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div-main">
+        {% for row in result %}
+            <h3 id="card-div">{{ dict(row).get("email") }}</h3>
+        {% endfor %}
+    </div>
+    <form action="/add-user" method="post">
+        <input class="form-control form-control-lg main-input" name="email" type="email" placeholder="Institution's email" required>
+        <input class="form-control form-control-lg main-input" name="password" type="password" placeholder="password" required>
+        <input type="submit" class="btn btn-primary">
+    </form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        const emailField = document.querySelector("#");
+    </script>
+</body>
+</html>
